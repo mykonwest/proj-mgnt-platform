@@ -46,11 +46,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-There is a lot of different projects to manage teams and software and this yet another one. I wanted to make it so I could use Spring and Vuejs and showcase their capabilities and features.
+There is a lot of different projects to manage software projects planning and this yet another one. I wanted to make it so I could use Spring and Vuejs to showcase their capabilities and features.
 
-With this web app you will be able to have clients, projects, teams, members and activities, allowing you to manage when needed.
+With this web app you will be able to have clients, projects, teams, members and activities, allowing you to plan what's needed.
 
-I hope you hav(e a great time with it, enjoy! :) 
+I hope you have a great time with it, enjoy! :) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
