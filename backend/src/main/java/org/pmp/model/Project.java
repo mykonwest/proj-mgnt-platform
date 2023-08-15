@@ -1,12 +1,13 @@
 package org.pmp.model;
 
 import jakarta.persistence.*;
-
-import java.util.List;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.Fetch;
 
 @Entity
 @SuppressWarnings("unused")
-public class Client {
+public class Project {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,9 +16,9 @@ public class Client {
     @Column
     private String name;
 
-    @Column
-    @OneToMany(mappedBy="client")
-    private List<Project> project;
+    @ManyToOne
+    @JoinColumn(name="client_id")
+    private Client client;
 
     public long getId() {
         return id;
@@ -33,5 +34,13 @@ public class Client {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 }
