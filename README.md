@@ -62,6 +62,6 @@ I hope you have a great time with it, enjoy! :)
 * ![Static Badge](https://img.shields.io/badge/Spring-Spring?logo=spring&color=darkgreen&link=spring.io)
 * ![Static Badge](https://img.shields.io/badge/PostgreSQL-PostgreSQL?logo=postgresql&color=lightblue&link=spring.io)
 * ![Static Badge](https://img.shields.io/badge/VueJS-VueJS?logo=vue&color=purple&link=vuejs.org)
-* ![Static Badge](https://img.shields.io/badge/Bootstrap-Bootstrap?logo=bootstrap&color=lightpink&link=vuejs.org)
+* ![Static Badge](https://img.shields.io/badge/Bootstrap-Bootstrap?logo=bootstrap&color=lightpink&link=getbootstrap.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
