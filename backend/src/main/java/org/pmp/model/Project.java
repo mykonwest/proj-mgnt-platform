@@ -1,9 +1,9 @@
 package org.pmp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.FetchMode;
-import org.hibernate.annotations.Fetch;
+
+import java.util.List;
 
 @Entity
 @SuppressWarnings("unused")
@@ -17,8 +17,13 @@ public class Project {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="client_id")
+    @JoinColumn(name = "client_id")
     private Client client;
+
+    @Column
+    @JsonIgnoreProperties("project")
+    @OneToMany(mappedBy="project")
+    private List<Task> tasks;
 
     public long getId() {
         return id;
@@ -42,5 +47,13 @@ public class Project {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
     }
 }

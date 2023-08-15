@@ -1,13 +1,13 @@
 package org.pmp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @SuppressWarnings("unused")
-public class Client {
+public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,10 +16,10 @@ public class Client {
     @Column
     private String name;
 
-    @Column
-    @OneToMany(mappedBy="client", fetch = FetchType.EAGER)
+    @ManyToOne
     @JsonIgnoreProperties({"client","tasks"})
-    private List<Project> projects;
+    @JoinColumn(name = "project_id")
+    private Project project;
 
     public long getId() {
         return id;
@@ -35,5 +35,13 @@ public class Client {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 }
