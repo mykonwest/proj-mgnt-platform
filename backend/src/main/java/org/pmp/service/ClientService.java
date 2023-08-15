@@ -20,18 +20,21 @@ public class ClientService {
     }
 
     public Client getClientById(long id) {
-        return repository.getReferenceById(id);
+        return repository.findById(id).orElse(null);
     }
 
     public Client createClient(Client client) {
-        repository.save(client);
-        return client;
+        return repository.save(client);
     }
 
     public Client updateClient(long id, Client client) {
-        client.setId(id);
-        repository.save(client);
-        return client;
+        repository.findById(id).ifPresentOrElse(
+                c-> {
+                    c.setName(client.getName());
+                    repository.save(c);
+                }
+        , () -> System.out.println("Client not found"));
+        return repository.findById(id).orElse(null);
     }
 
     public void deleteClient(long id) {
